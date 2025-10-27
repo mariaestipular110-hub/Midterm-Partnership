@@ -17,39 +17,48 @@ The Library Management System is a web-based application built with Laravel that
 
 ## Features / Functionalities
 
--Book Management – Add, edit, delete, and view book records with the number of copies.
-
--Member Management – Register and manage members who borrow books.
--Loan Management – Record book borrowing and returning transactions.
--Automatic Inventory Control 
-    -When a book is borrowed → copies decrease by 1.
-    -When a book is returned → copies increase by 1.
--Clean Bootstrap UI – Simple and responsive design for usability.
+- Book Management – Add, edit, delete, and view book records with the number of copies.
+- Member Management – Register and manage members who borrow books.
+- Loan Management – Record book borrowing and returning transactions.
+- Automatic Inventory Control 
+    - When a book is borrowed → copies decrease by 1.
+    - When a book is returned → copies increase by 1.
+- Clean Bootstrap UI – Simple and responsive design for usability.
 
 ## Installation Instructions
-1.Install the composer (git compose). 
-2.Clone or Download the project folder.
-3.Open the terminal and navigate to the project directory"cd libraryApp".
-4.Copy .env.example to .env and configure your database.
-5.Start the development server.
-6.Start the local development server using "php artisan serve".
-7.Visit the app in your browser"http://127.0.0.1:8000/books".
+1. Install the composer (git compose).
+2. Clone or Download the project folder.
+3. Open the terminal and navigate to the project directory"cd libraryApp".
+4. Copy .env.example to .env and configure your database.
+5. Start the development server.
+6. Start the local development server using "php artisan serve".
+7. Visit the app in your browser"http://127.0.0.1:8000/books".
 
 ### Usage
  **After installation, you can navigate through the system via the following pages:**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+ | **Page** | **Description** |
+|----------------|-----------------|
+| **/books** |Displays all books with available copies. |
+| **/books/create** |Add a new book. |
+| **/members** | Manage library members. |
+| **/borrows** | View all loan records (borrowed/returned books). |
+| **/loans/create** | BBorrow a book. |
 
 ## Code of Conduct
+- A Member has many Loans (1 → Many).
+- A Book has many Loans (1 → Many).
+- A Loan belongs to both a Book and a Member.
+- Book copies are automatically decremented or incremented based on transactions.
+
+## MVC Architecture Overview
+The system follows Laravel's MVC (Model-View-Controller) structure:
+ | **Component** | **Description** |
+|----------------|-----------------|
+| **Model** | Represents database tables: `Book`, `Member`, and `Borrow`. Each defines fillable fields and relationships. |
+| **View** | Blade templates for displaying books, members, and borrow records using Bootstrap tables. |
+| **Controller** | Business logic that handles data flow and validation (e.g., decrement/increment book copies). |
+
+## Example Code Snippets
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
