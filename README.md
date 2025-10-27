@@ -9,16 +9,11 @@ The Library Management System is a web-based application built with Laravel that
 ## Objectives
 
 - To implement a full-featured CRUD-based library system in Laravel.
-  
--To apply the Model–View–Controller (MVC) architecture effectively.
-
--To manage data relationships between books, members, and borrows.
-
--To ensure automatic updating of available book copies upon borrowing and returning.
-
--To create a simple, user-friendly interface using Bootstrap.
-
--Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- To apply the Model–View–Controller (MVC) architecture effectively.
+- To manage data relationships between books, members, and borrows.
+- To ensure automatic updating of available book copies upon borrowing and returning.
+- To create a simple, user-friendly interface using Bootstrap.
+- Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Features / Functionalities
 
