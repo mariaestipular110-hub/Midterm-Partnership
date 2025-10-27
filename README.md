@@ -50,7 +50,7 @@ The Library Management System is a web-based application built with Laravel that
 - A Loan belongs to both a Book and a Member.
 - Book copies are automatically decremented or incremented based on transactions.
 
-## MVC Architecture Overview
+## MVC Architecture 
 The system follows Laravel's MVC (Model-View-Controller) structure:
  | **Component** | **Description** |
 |----------------|-----------------|
@@ -58,14 +58,71 @@ The system follows Laravel's MVC (Model-View-Controller) structure:
 | **View** | Blade templates for displaying books, members, and borrow records using Bootstrap tables. |
 | **Controller** | Business logic that handles data flow and validation (e.g., decrement/increment book copies). |
 
-## Example Code Snippets
+## Sreenshot or Code Snippets
+## BOOKCONTROLLER
+<?php
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+namespace App\Http\Controllers;
 
-## Security Vulnerabilities
+use App\Models\Book;
+use Illuminate\Http\Request;
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+class BookController extends Controller
+{
+    public function index()
+    {
+        
+        $books = Book::withCount('activeBorrows')->get();
+        return view('books.index', compact('books'));
+    }
 
-## License
+    public function create()
+    {
+        return view('books.create');
+    }
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'isbn'           => 'nullable|string|max:50',
+            'title'          => 'required|string|max:255',
+            'author'         => 'nullable|string|max:255',
+            'publisher'      => 'nullable|string|max:255',
+            'published_year' => 'nullable|integer',
+            'copies'         => 'required|integer|min:1',
+        ]);
+
+        Book::create($data);
+
+        return redirect()->route('books.index')->with('success', 'Book added successfully.');
+    }
+
+    public function edit(Book $book)
+    {
+        return view('books.edit', compact('book'));
+    }
+
+    public function update(Request $request, Book $book)
+    {
+        $data = $request->validate([
+            'isbn'           => 'nullable|string|max:50',
+            'title'          => 'required|string|max:255',
+            'author'         => 'nullable|string|max:255',
+            'publisher'      => 'nullable|string|max:255',
+            'published_year' => 'nullable|integer',
+            'copies'         => 'required|integer|min:1',
+        ]);
+
+        $book->update($data);
+
+        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
+    }
+
+    public function destroy(Book $book)
+    {
+        $book->delete();
+        return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
+    }
+}
+
+## Contributors 
