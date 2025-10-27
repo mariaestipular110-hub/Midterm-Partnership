@@ -18,6 +18,7 @@ The Library Management System is a web-based application built with Laravel that
 ## Features / Functionalities
 
 -Book Management – Add, edit, delete, and view book records with the number of copies.
+
 -Member Management – Register and manage members who borrow books.
 -Loan Management – Record book borrowing and returning transactions.
 -Automatic Inventory Control 
