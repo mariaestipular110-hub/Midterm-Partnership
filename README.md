@@ -4,36 +4,38 @@
 **Library Management System using Laravel**
 
 ## Overview
+The Library Management System is a web-based application built with Laravel that allows easy management of library resources. It helps librarians efficiently handle books, members, and borrowing transactions. The system automates record-keeping and updates book availability when borrowed or returned.
 
-## About Laravel
+## Objectives
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- To implement a full-featured CRUD-based library system in Laravel.
+-To apply the Model–View–Controller (MVC) architecture effectively.
+-To manage data relationships between books, members, and borrows.
+-To ensure automatic updating of available book copies upon borrowing and returning.
+-To create a simple, user-friendly interface using Bootstrap.
+-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features / Functionalities
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-Book Management – Add, edit, delete, and view book records with the number of copies.
+-Member Management – Register and manage members who borrow books.
+-Loan Management – Record book borrowing and returning transactions.
+-Automatic Inventory Control 
+    -When a book is borrowed → copies decrease by 1.
+    -When a book is returned → copies increase by 1.
+-Clean Bootstrap UI – Simple and responsive design for usability.
 
-## Learning Laravel
+## Installation Instructions
+1.Install the composer (git compose). 
+2.Clone or Download the project folder.
+3.Open the terminal and navigate to the project directory"cd libraryApp".
+4.Copy .env.example to .env and configure your database.
+5.Start the development server.
+6.Start the local development server using "php artisan serve".
+7.Visit the app in your browser"http://127.0.0.1:8000/books".
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
+### Usage
+ **After installation, you can navigate through the system via the following pages:**
 - **[Tighten Co.](https://tighten.co)**
 - **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
 - **[64 Robots](https://64robots.com)**
