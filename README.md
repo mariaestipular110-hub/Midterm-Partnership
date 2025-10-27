@@ -26,13 +26,14 @@ The Library Management System is a web-based application built with Laravel that
 - Clean Bootstrap UI – Simple and responsive design for usability.
 
 ## Installation Instructions
-1. Install the composer (git compose).
-2. Clone or Download the project folder.
-3. Open the terminal and navigate to the project directory"cd libraryApp".
+1. Clone or Download the project folder.
+2. Open the terminal and navigate to the project directory: "cd library-system".
+3. Install dependencies: "composer install".
 4. Copy .env.example to .env and configure your database.
-5. Start the development server.
-6. Start the local development server using "php artisan serve".
-7. Visit the app in your browser"http://127.0.0.1:8000/books".
+5. Generate the application key: "php artisan key:generate"
+6. Run migrations to create tables: "php artisan migrate"
+7. Start the local development server using "php artisan serve".
+8. Visit the app in your browser "http://127.0.0.1:8000/books".
 
 ### Usage
  **After installation, you can navigate through the system via the following pages:**
@@ -60,5 +61,5 @@ The system follows Laravel's MVC (Model-View-Controller) structure:
 
 ## Sreenshot or Code Snippets
 ## BOOKCONTROLLER
-
+![Alt Text]("C:\Users\LUISA\OneDrive\Hình ảnh\Screenshots\book.png")
 ## Contributors 
