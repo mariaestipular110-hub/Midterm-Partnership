@@ -45,7 +45,7 @@ The Library Management System is a web-based application built with Laravel that
 | **/borrows** | View all loan records (borrowed/returned books). |
 | **/loans/create** | BBorrow a book. |
 
-## Code of Conduct
+## Database Relationships
 - A Member has many Loans (1 → Many).
 - A Book has many Loans (1 → Many).
 - A Loan belongs to both a Book and a Member.
