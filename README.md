@@ -125,5 +125,11 @@ class BookController extends Controller
         return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
     }
 }
+```
 
-## Contributors 
+## Contributors
+### **Maria Luisa Estipular**
+---
+## License
+This project is open-source and free to use for educational and learning purposes only.
+
