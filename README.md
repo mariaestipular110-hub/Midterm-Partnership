@@ -61,5 +61,5 @@ The system follows Laravel's MVC (Model-View-Controller) structure:
 
 ## Sreenshot or Code Snippets
 ## BOOKCONTROLLER
-![Alt Text]("")
+![LibraryApp Dashboard](images/book.png)
 ## Contributors 
